@@ -1,0 +1,24 @@
+﻿@model IEnumerable<news.domain.Entities.Tag>
+
+<h2>Tags</h2>
+
+<a href="/Tags/Create">Nova Tag</a>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+        <th>Ações</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/Tags/Edit/@item.Id">Editar</a> |
+                <a href="/Tags/Delete/@item.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+</table>

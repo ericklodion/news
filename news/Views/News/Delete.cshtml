@@ -1,0 +1,11 @@
+﻿@model news.domain.Entities.New
+
+<h2>Excluir Noticia</h2>
+
+<p>Tem certeza que deseja excluir <strong>@Model.Title</strong>?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+    <a href="/News">Cancelar</a>
+</form>

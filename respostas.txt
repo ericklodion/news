@@ -1,0 +1,14 @@
+1) Qual fluxo os dados de um formulário em uma View deve percorrer até ser armazenado na fonte de dados em um projeto DDD?
+> O usuário preenche os dados na view html
+> são enviados para uma controller
+> essa controller chama uma camada de serviço podendo passar os dados através de objetos DTO por exemplo
+> esse serviço conversa com a camada de dominio e converte os DTOs em classes de dominio
+> os dados são salvos na fonte de dados
+
+2) Nossa aplicação necessita que um usuário esteja autenticado para poder navegar nas funcionalidades, em .net, como podemos desenvolver essa autenticação?
+Podemos usar o identity do entity e proteger as rotas com o atributo [Authorize]
+
+3) Estamos enfrentando problemas de performance na pagina inicial de um portal que tem muitos acessos. Essa página exibe eventos separados em 6 sessões do html, filtrados, cada sessão, por uma regra de negócio. Trata-se de um projeto MVC, no qual são realizados 6 consultas via ORM para carregar a View que será processada no servidor e disponibilizada ao browser. O que podemos fazer para tentar mitigar esse problema de performance?
+Se essas queries forem apenas de consulta podemos otimiza-las com AsNoTracking e tecnicas parecidas
+Outro ponto que pode ajudar é verificar se a view está carregando essas consultas de forma assiincrona, podemos carregar todas ao mesmo tempo e liberar a view quando todas tiverem retornado.
+Se os dados forem iguais para os usuários outra alternativa seria utilizar algum tipo de cache.
