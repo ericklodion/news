@@ -19,7 +19,7 @@ Este projeto implementar de forma basica a relação entre tags, notícias e usu
 ```
 - Execute o comando abaixo para criação do seu banco de dados
 ```bash
-  dotnet ef database update --project news-data
+  dotnet ef database update --project news.data
 ```
 
 ## Autores
